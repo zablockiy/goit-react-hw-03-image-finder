@@ -16,7 +16,7 @@ export default class App extends Component {
   state = {
     page: 1,
     searchName: '',
-    largeImage: '',
+    largeImg: '',
     items: [],
     isLoading: false,
     error: null,
@@ -24,13 +24,13 @@ export default class App extends Component {
 
   openModalOpen = (imgURL) => {
     this.setState({
-      largeImage:imgURL,
+      largeImg:imgURL,
     })
   }
 
   onModalClose = () => {
     this.setState({
-      largeImage: '',
+      largeImg: '',
     })
   }
 
@@ -88,16 +88,16 @@ export default class App extends Component {
 
 
   render() {
-    const { items, largeImage, isLoading, error} = this.state;
+    const { items, largeImg, isLoading, error,searchName} = this.state;
 
     return (
       <div className={styles.wrapper}>
         <Searchbar onSubmit={this.handleFormSubmit} isLoading={isLoading}/>
         {error && <p>{error}</p>}
-        {items.length > 0 &&  <ImageGallery items={items}  onClick={this.openModalOpen} />}
+        {items.length > 0 &&  <ImageGallery items={items}  onClick={this.openModalOpen} searchName={searchName}/>}
         {isLoading && <Loader />}
         {items.length >= 12 && <Button onClick={this.handleLoadMore} isLoading={isLoading}/>}
-        {largeImage && (<Modal onClose={this.onModalClose} url={largeImage}/>)}
+        {largeImg && (<Modal onClose={this.onModalClose} url={largeImg}/>)}
       </div>
     );
   }
