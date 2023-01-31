@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-import styles from './loader.module.css';
+import styles from './loaderL.module.css';
 
 
 const Loader = props => (
