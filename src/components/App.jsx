@@ -37,7 +37,7 @@ export default class App extends Component {
   handleFormSubmit = (searchName) => {
     if(searchName.trim().length === 0) {
       alert('Please, enter request');
-      return
+      return;
     }
 
     this.setState({
@@ -78,11 +78,11 @@ export default class App extends Component {
     }
   };
 
-  componentDidUpdate (_, prevState) {
+  componentDidUpdate(_, prevState) { 
     if (prevState.page !== this.state.page ||
       prevState.searchName !== this.state.searchName) {
       this.getImages(this.state.searchName, this.state.page);
-    }
+    } 
   }
 
 

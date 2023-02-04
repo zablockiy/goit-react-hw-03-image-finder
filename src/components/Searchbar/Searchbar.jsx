@@ -9,12 +9,15 @@ export default class Searchbar extends Component {
   }
 
   handleChangeName = e => {
-    this.setState({ imgName: e.currentTarget.value.toLowerCase() })
+   
+       this.setState({ imgName: e.currentTarget.value.toLowerCase() })
+    
+   
   };
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.imgName);
-    this.setState({ imgName: '' })
+    // this.setState({ imgName: '' })
 
   };
 
