@@ -39,6 +39,10 @@ export default class App extends Component {
       alert('Please, enter request');
       return;
     }
+    if (searchName ===this.state.searchName) {
+      alert('Please, enter new request');
+      return;
+    }
 
     this.setState({
       searchName,
@@ -78,11 +82,11 @@ export default class App extends Component {
     }
   };
 
-  componentDidUpdate(_, prevState) { 
+  componentDidUpdate(_, prevState) {
     if (prevState.page !== this.state.page ||
       prevState.searchName !== this.state.searchName) {
       this.getImages(this.state.searchName, this.state.page);
-    } 
+    }
   }
 
 
